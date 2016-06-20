@@ -45,7 +45,7 @@ function createCells() {
   }
 }
 
-function drowCell(cell) {
+function drawCell(cell) {
   ctx.beginPath();
   ctx.rect(cell.x, cell.y, width, width);
 
@@ -93,7 +93,7 @@ document.onkeydown = function (event) {
 
 function startGame() {
   createCells();
-  drowAllCells();
+  drawAllCells();
   pasteNewCell();
   pasteNewCell();
 }
@@ -103,10 +103,10 @@ function finishGame() {
   loss = true;
 }
 
-function drowAllCells() {
+function drawAllCells() {
   for (var i = 0; i < size; i++) {
     for (var j = 0; j < size; j++) {
-      drowCell(cells[i][j]);
+      drawCell(cells[i][j]);
     }
   }
 }
@@ -131,7 +131,7 @@ function pasteNewCell() {
     var coll = Math.floor(Math.random() * size);
     if (!cells[row][coll].value) {
       cells[row][coll].value = 2 * Math.ceil(Math.random() * 2);
-      drowAllCells();
+      drawAllCells();
       return;
      }
   }
@@ -159,7 +159,6 @@ function moveRight () {
       }
     }
   }
-  drowAllCells();
   pasteNewCell();
 }
 
@@ -185,7 +184,6 @@ function moveLeft() {
       }
     }
   }
-  drowAllCells();
   pasteNewCell();
 }
 
@@ -211,7 +209,6 @@ function moveUp() {
       }
     }
   }
-  drowAllCells();
   pasteNewCell();
 }
 
@@ -237,6 +234,5 @@ function moveDown() {
       }
     }
   }
-  drowAllCells();
   pasteNewCell();
 }
