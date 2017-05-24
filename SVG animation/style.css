@@ -1,0 +1,17 @@
+path {
+  stroke-dasharray: 20000;
+  stroke-dashoffset: 20000;
+  animation: dash 10s linear forwards, filling 3s linear 7s forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes filling {
+	to {
+		fill: rgb(0,0,0);
+	}
+}
